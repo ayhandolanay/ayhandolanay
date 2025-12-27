@@ -1,207 +1,617 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayhan DOLANAY | EMO Antalya Başkan Adayı</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayhan Dolanay | Antalya EMO Başkan Adayı</title>
+    
+    <!-- Google Fonts: Güçlü ve Okunaklı Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS DEĞİŞKENLERİ (RENK PALETİ) --- */
+        :root {
+            --primary-blue: #004aad; /* EMO/Kurumsal Mavi */
+            --dark-blue: #002855;
+            --accent-yellow: #ffcc00; /* Elektrik/Sarı */
+            --text-dark: #2c3e50;
+            --text-light: #f4f4f4;
+            --white: #ffffff;
+            --bg-light: #f9fbfd;
+            --transition: all 0.3s ease;
+        }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-    font-family:'Inter',sans-serif;
-    background:#020617;
-    color:#e5e7eb;
-    line-height:1.6;
-}
+        /* --- GENEL AYARLAR --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px 20px;
-    text-align:center;
-    background:
-        linear-gradient(rgba(2,6,23,0.65),rgba(2,6,23,0.9)),
-        url("hero.jpg") center/cover no-repeat;
-}
-.hero-box{
-    background:rgba(15,23,42,0.55);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:32px;
-    padding:70px 50px;
-    max-width:820px;
-    width:100%;
-}
-.hero span{
-    letter-spacing:3px;
-    font-size:13px;
-    opacity:.8;
-}
-.hero h1{
-    font-size:52px;
-    margin:22px 0 10px;
-}
-.hero h2{
-    font-size:24px;
-    font-weight:400;
-    opacity:.9;
-    margin-bottom:25px;
-}
-.phone{
-    display:block;
-    margin-bottom:35px;
-    font-size:18px;
-    color:#93c5fd;
-    text-decoration:none;
-    font-weight:500;
-}
-.hero .btn{
-    display:inline-block;
-    background:#3b82f6;
-    color:white;
-    padding:18px 46px;
-    border-radius:999px;
-    text-decoration:none;
-    font-weight:600;
-    font-size:16px;
-    transition:.3s;
-}
-.hero .btn:hover{
-    transform:translateY(-2px);
-    background:#2563eb;
-}
+        html {
+            scroll-behavior: smooth;
+            /* DÜZELTME: Menü linkine tıklandığında başlığın yazıyı kapatmaması için padding */
+            scroll-padding-top: 90px; 
+        }
 
-/* SECTIONS */
-.section{
-    max-width:1100px;
-    margin:auto;
-    padding:90px 20px;
-}
-.section h3{
-    font-size:34px;
-    margin-bottom:20px;
-    color:#93c5fd;
-}
-.section p{
-    font-size:18px;
-    max-width:820px;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:28px;
-    margin-top:45px;
-}
-.card{
-    background:rgba(15,23,42,0.8);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:22px;
-    padding:34px 22px;
-    text-align:center;
-    font-weight:600;
-    backdrop-filter:blur(6px);
-    transition:.3s;
-}
-.card:hover{
-    transform:translateY(-6px);
-    border-color:#3b82f6;
-}
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
 
-/* CTA */
-.cta{
-    background:linear-gradient(135deg,#1e40af,#2563eb);
-    padding:90px 20px;
-    text-align:center;
-}
-.cta h3{
-    font-size:36px;
-    margin-bottom:14px;
-}
-.cta p{
-    font-size:20px;
-    max-width:800px;
-    margin:20px auto 30px;
-}
-.cta a{
-    color:white;
-    font-weight:600;
-    text-decoration:none;
-    font-size:18px;
-}
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    font-size:14px;
-    opacity:.6;
-}
+        /* --- BUTONLAR --- */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+        }
 
-/* MOBILE */
-@media(max-width:600px){
-    .hero h1{font-size:38px}
-    .hero h2{font-size:20px}
-    .hero-box{padding:50px 28px}
-}
-</style>
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: var(--dark-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .btn-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25d366; 
+            color: white;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .btn-contact:hover {
+            background-color: #128c7e;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
+
+        .sub-logo {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .phone-number-header {
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9), rgba(0, 74, 173, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--accent-yellow); /* Slogan rengi */
+        }
+
+        .hero-date {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* --- BÖLÜM STİLLERİ --- */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-yellow);
+            margin: 10px auto 0;
+        }
+
+        /* --- HAKKINDA --- */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 20px 20px 0px var(--accent-yellow);
+        }
+
+        /* --- RESİM ÜSTÜ ETİKET --- */
+        .experience-badge-on-image {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 6px solid var(--accent-yellow);
+            z-index: 10;
+            max-width: 200px;
+        }
+
+        .experience-badge-on-image span.year {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--accent-yellow);
+            margin-bottom: 5px;
+        }
+
+        .experience-badge-on-image span.text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* --- PROJELER / VİZYON --- */
+        .vision {
+            background-color: var(--bg-light);
+        }
+
+        .vision-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .vision-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--accent-yellow);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 74, 173, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- CTA BANNER --- */
+        .cta-banner {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .phone-large {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            display: block;
+            margin: 1.5rem 0;
+            text-decoration: none;
+        }
+        
+        .phone-large:hover {
+            opacity: 0.8;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                height: 90vh;
+                background: var(--white);
+                flex-direction: column;
+                width: 100%;
+                padding: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+                box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.nav-active {
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .about-container { grid-template-columns: 1fr; }
+            .phone-number-header { display: none; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; }
+            
+            /* Mobile için fotoğraf etiketini sığdırma */
+            .experience-badge-on-image {
+                right: 0;
+                bottom: 10px;
+                left: 10px; 
+                max-width: none;
+            }
+        }
+
+        /* Animasyon */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
-    <div class="hero-box">
-        <span>EMO ANTALYA BAŞKAN ADAYI</span>
-        <h1>Ayhan DOLANAY</h1>
-        <h2>Birlikte Daha Güçlü Bir Oda</h2>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <a href="#" class="logo">AYHAN DOLANAY</a>
+                <span class="sub-logo">EMO Antalya Başkanı Adayı</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#vizyon">Vizyon &amp; Projeler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <!-- TELEFON NUMARASI -->
+                <li class="phone-number-header">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+905424332077">0542 433 20 77</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-        <!-- TELEFON -->
-        <a class="phone" href="tel:+905424332077">📞 +90 542 433 20 77</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BİRLİKTE DAHA GÜÇLÜ BİR ODA</h1>
+            
+            <h2>Güçlü Oda, Güçlü Meslek</h2>
+            
+            <div class="hero-date">
+                <i class="far fa-calendar-alt"></i> 11 OCAK SEÇİMLERİ
+            </div>
 
-        <a href="#katilim" class="btn">11 Ocak’ta Sandığa</a>
-    </div>
-</section>
+            <div class="hero-actions">
+                <a href="#vizyon" class="btn btn-primary">Vizyonumuzu İncele</a>
+                <a href="#iletisim" class="btn btn-outline">Bize Ulaşın</a>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-    <h3>Bu Oda Hepimizin</h3>
-    <p>
-        Elektrik Mühendisleri Odası’nı; meslektaşlarıyla bağını güçlendiren,
-        genç mühendisi merkeze alan, ulaşılabilir ve şeffaf bir yapıya
-        birlikte dönüştürmek için adayım.
-    </p>
-</section>
+    <!-- Hakkımda Section -->
+    <section id="hakkimda" class="about">
+        <div class="section-title">
+            <h2>Adayımız Tanıyın</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <!-- RESİM EKLEME ALANI: Aşağıdaki src kısmını kendi dosyanızla değiştirin (Örn: ayhan.jpg) -->
+                <img src="Ayhan.jpeg" alt="Ayhan Dolanay" >
+                
+                <!-- FOTOĞRAF ÜZERİNDEKİ ETİKET -->
+                <div class="experience-badge-on-image">
+                    <span class="year">1980</span>
+                    <span class="text">Mezunu<br>45 Yıllık Deneyim</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Mesleğine Sadık, Geleceğe Umutlu</h3>
+                <p>1980 yılında mezun olduğum günden bu yana geçen 45 yıl boyunca, elektrik mühendisliğimizin her alanında, sahada ve yönetimde görev aldım. Bu uzun soluklu yürüyüş, bize sadece mesleki bilgiyi değil, mesleğin değerlerini ve şehrimizin enerji ihtiyaçlarını da öğretti.</p>
+                <br>
+                <p>Antalya Elektrik Mühendisleri Odası Başkanlığına adaylığım, <strong>"Birlikte Daha Güçlü Bir Oda"</strong> inancından doğmaktadır. 45 yıllık birikimimi, <strong>"Güçlü Oda, Güçlü Meslek"</strong> hedefiyle harmanlayarak, odamızın tüm üyeleri için şeffaf, katılımcı ve üretken bir yönetim öngörüyorum.</p>
+                
+                <div style="margin-top: 2rem; padding: 1rem; background: #eef4fa; border-radius: 5px; border-left: 4px solid var(--primary-blue);">
+                    <strong>Mesajım:</strong> Geleceğe taşımak istediğimiz bir miras var. Bu mirası, bilgi ve tecrübemizle koruyup geliştireceğiz.
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-    <h3>Birlikte Yöneteceğiz</h3>
-    <div class="grid">
-        <div class="card">Katılımcı Yönetim</div>
-        <div class="card">Genç Mühendise Destek</div>
-        <div class="card">Sahada Aktif EMO</div>
-        <div class="card">Şeffaflık</div>
-        <div class="card">Erişilebilir Başkanlık</div>
-    </div>
-</section>
+    <!-- Vizyon Section -->
+    <section id="vizyon" class="vision">
+        <div class="section-title">
+            <h2>Vizyon ve Önceliklerimiz</h2>
+        </div>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <div class="icon-box"><i class="fas fa-users"></i></div>
+                <h3>Birliktelik ve Dayanışma</h3>
+                <p>45 yıllık tecrübemizle odamızı bütünsel bir aile yapısına kavuşturuyoruz. Her üyenin sesinin duyulduğu, güç birliği içinde bir odamız olacak.</p>
+            </div>
+            <div class="vision-card">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h3>Güçlü Mesleki Duruş</h3>
+                <p>Mesleki haklarımızı korumak, meslektaşlarımızın yaşadığı sorunlara kalıcı çözümler üretmek ve mesleğimizin saygınlığını artırmak için durmadan çalışacağız.</p>
+            </div>
+            <div class="vision-card">
+                <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Deneyim Transferi</h3>
+                <p>45 yıllık bilgi birikimimizi genç meslektaşlarımıza aktararak, kuşaklararası bilgi akışını güçlendiriyor ve sürekli eğitim programları düzenliyoruz.</p>
+            </div>
+            <div class="vision-card">
+                <div class="icon-box"><i class="fas fa-handshake"></i></div>
+                <h3>Sektörle İletişim</h3>
+                <p>Kamu ve özel sektör ile kuracağımız sağlam köprülerle, hem mühendislerimizin hem de sektörümüzün çıkarlarını üst düzeyde temsil edeceğiz.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="katilim" class="cta">
-    <h3>11 Ocak’ta Sandığa</h3>
-    <p>
-        Kime oy verirseniz verin,
-        gelin EMO’ya birlikte sahip çıkalım.
-    <p>
-        Güçlü Oda, Güçlü Meslek
-    </p>
-    <a href="tel:+905424332077">📞 Ayhan DOLANAY ile iletişime geç</a>
-</section>
+    <!-- CTA / İletişim -->
+    <section id="iletisim" class="cta-banner">
+        <h2>Desteğinizi Bekliyoruz</h2>
+        <p>Güçlü bir oda için yol arkadaşınız olun.</p>
+        
+        <!-- TELEFON NUMARASI -->
+        <a href="tel:+905424332077" class="phone-large">
+            <i class="fas fa-phone"></i> 0542 433 20 77
+        </a>
 
-<footer>
-    © Ayhan DOLANAY – EMO Antalya Başkan Adayı
-</footer>
+        <div style="margin-top: 2rem; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="#" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Hattı</a>
+            <a href="mailto:info@ayhandolanay.com" class="btn btn-outline">E-posta Gönder</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3 style="color: #fff; margin-bottom: 1rem;">AYHAN DOLANAY</h3>
+            <p>Antalya Elektrik Mühendisleri Odası Başkan Adayı</p>
+            <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // DÜZELTME: Kodun tamamen yüklenmesini bekleyerek menü sorunlarını çözüyoruz
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            // Hamburger menü tıklama işlemi
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('nav-active');
+                });
+
+                // Menü linklerine tıklayınca menüyü kapatma
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('nav-active');
+                    });
+                });
+            } else {
+                console.error("Menü elemanları bulunamadı.");
+            }
+        });
+    </script>
 
 </body>
 </html>
